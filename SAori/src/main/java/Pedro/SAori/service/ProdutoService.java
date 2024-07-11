@@ -14,4 +14,12 @@ public class ProdutoService {
         produto.setTamanho(produtoDTO.getTamanho());
         repository.save(produto);
     }
+    public void updateProdutoDTO(ProdutoDTO produtoDTO){
+        Produto produto = repository.findById(produtoDTO.getId()).orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+        produto.setMaterial(produtoDTO.getMaterial());
+        produto.setCor(produtoDTO.getCor());
+        produto.setTamanho(produtoDTO.getTamanho());
+        repository.save(produto);
+    }
+
 }

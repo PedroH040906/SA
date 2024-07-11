@@ -17,12 +17,10 @@ public class PedidoDTO {
     private Date dataPedida;
     private Date dataEntrega;
     private String descricao;
-    private Status status;
 
-    private PedidoDTO(Date dataPedida, Date dataEntrega, String descricao, Status status) {
+    private PedidoDTO(Date dataPedida, Date dataEntrega, String descricao) {
         this.dataPedida = dataPedida;
         this.dataEntrega = dataEntrega;
         this.descricao = descricao;
-        this.status = status;
     }
 }

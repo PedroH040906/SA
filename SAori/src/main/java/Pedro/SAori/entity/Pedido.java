@@ -1,6 +1,7 @@
 package Pedro.SAori.entity;
 
 import jakarta.persistence.*;
+import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,5 +28,5 @@ public class Pedido {
     @Column(name = "descricao")
     private String descricao;
     @Column(name = "status")
-    private Status status;
+    private Snippet.Status status;
 }

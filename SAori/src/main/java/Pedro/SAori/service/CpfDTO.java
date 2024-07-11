@@ -1,27 +1,19 @@
 package Pedro.SAori.service;
 
 import Pedro.SAori.entity.Pessoa;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import java.util.Date;
 
-@Data
-@Builder
+@Getter
+@Setter
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CpfDTO {
+public class CpfDTO extends PessoaDTO{
 
-    private PessoaDTO pessoa;
     private String cpf;
     private Date dataNascimento;
     private Character genero;
 
-    private CpfDTO(String cpf, Date dataNascimento, Character genero) {
-        this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
-        this.genero = genero;
-    }
 }

@@ -4,9 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class PessoaDTO {
@@ -18,11 +19,12 @@ public class PessoaDTO {
     private String obs;
     private EnderecoDTO endereco;
 
-    private PessoaDTO(String nome, String tipo, String telefone, String obs){
+    private PessoaDTO(String nome, String tipo, String telefone, String obs,EnderecoDTO endereco) {
         this.nome = nome;
         this.tipo = tipo;
         this.telefone = telefone;
         this.obs = obs;
-        this.endereco = EnderecoDTO.builder().build();
+        this.endereco = endereco;
     }
+
 }

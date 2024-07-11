@@ -1,17 +1,12 @@
 package Pedro.SAori.service;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
-@Builder
+@Setter
+@Getter
 @NoArgsConstructor
-@AllArgsConstructor
-public class EnderecoDTO {
-
-    private Long id;
+@EqualsAndHashCode(callSuper = false)
+public class EnderecoDTO extends PessoaDTO {
     private String logradouro;
     private String bairro;
     private String numero;
@@ -20,7 +15,7 @@ public class EnderecoDTO {
     private String complemento;
     private String cep;
 
-    public EnderecoDTO(String logradouro,String bairro,String numero,String cidade,String estado,String complemento,String cep) {
+    public EnderecoDTO(String logradouro, String bairro, String numero, String cidade, String estado, String complemento, String cep) {
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.numero = numero;

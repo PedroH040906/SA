@@ -1,6 +1,5 @@
 package Pedro.SAori.entity;
 
-import Pedro.SAori.service.ProdutoDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "pedido")
-public class ItensDoPedido {
+public class ItenDoPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
