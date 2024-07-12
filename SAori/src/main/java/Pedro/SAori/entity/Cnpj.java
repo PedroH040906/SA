@@ -1,24 +1,16 @@
 package Pedro.SAori.entity;
 
-import Pedro.SAori.service.PessoaDTO;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Builder
-@Setter
-@Getter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "CNPJ")
 public class Cnpj extends Pessoa {
 
-    @Id
-    @Column(name = "id_pessoa")
-    private Pessoa pessoa;
     @Column(name = "cnpj")
     private String cnpj;
     @Column(name = "nome_fantasia")
@@ -31,5 +23,4 @@ public class Cnpj extends Pessoa {
     private String iE;
     @Column(name = "ramo_atividade")
     private String ramoAtividade;
-
 }

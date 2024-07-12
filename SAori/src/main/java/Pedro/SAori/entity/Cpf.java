@@ -1,19 +1,18 @@
 package Pedro.SAori.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "CPF")
+@PrimaryKeyJoinColumn(name="cpf")
 public class Cpf extends Pessoa {
 
     @Column(name = "cpf")
