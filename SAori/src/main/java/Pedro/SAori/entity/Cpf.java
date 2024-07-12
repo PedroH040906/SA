@@ -12,10 +12,13 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Table(name = "CPF")
-public class Cpf extends Pessoa {
-
+public class Cpf {
+    //PROBLEMA FALTA DE ID TODA CLASSE DEVE TER ID
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
     @Column(name = "cpf")
     private String cpf;
     @Column(name = "data_nascimento")

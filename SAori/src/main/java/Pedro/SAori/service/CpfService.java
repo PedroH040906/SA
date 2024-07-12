@@ -13,10 +13,10 @@ public class CpfService {
         cpf.setCpf(cpfDTO.getCpf());
         cpf.setDataNascimento(cpfDTO.getDataNascimento());
         cpf.setGenero(cpfDTO.getGenero());
-        cpf.setNome(cpfDTO.getNome());
-        cpf.setTipo(cpfDTO.getTipo());
-        cpf.setTelefone(cpfDTO.getTelefone());
-        cpf.setObs(cpfDTO.getObs());
+//        cpf.setNome(cpfDTO.getNome());
+//        cpf.setTipo(cpfDTO.getTipo());
+//        cpf.setTelefone(cpfDTO.getTelefone());
+//        cpf.setObs(cpfDTO.getObs());
 
         Endereco endereco = new Endereco();
         endereco.setLogradouro(cpfDTO.getEndereco().getLogradouro());
@@ -27,7 +27,7 @@ public class CpfService {
         endereco.setComplemento(cpfDTO.getEndereco().getComplemento());
         endereco.setEstado(cpfDTO.getEndereco().getEstado());
 
-        cpf.setEndereco(endereco);
+//        cpf.setEndereco(endereco);
         repository.save(cpf);
     }
 }

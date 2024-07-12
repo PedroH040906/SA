@@ -6,13 +6,11 @@ import lombok.experimental.SuperBuilder;
 
 @Entity
 @SuperBuilder
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "pessoa")
-public abstract class Pessoa {
+public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -20,11 +20,12 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "pessoa")
-    private Pessoa pessoa;
+    //PROBLEMA DE RELACIONAMENTO
+//    @Column(name = "pessoa")
+//    private Pessoa pessoa;
     @Column(name = "data_cadastro")
     private Date dataCadastro;
-    @Column(name = "id")
+    @Column(name = "papel")
     private int papel;
     @Column(name = "senha")
     private String senha;
