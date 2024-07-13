@@ -24,7 +24,8 @@ public class EstoqueInsumos {
     private String cor;
     @Column(name = "preco")
     private double preco;
-    @Column(name = "U.M")
+    //PROBLEMA DE NOMENCLATURA
+    @Column(name = "um")
     private String uM;
     @Column(name = "quantidade")
     private double quantidade;

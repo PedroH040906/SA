@@ -10,10 +10,10 @@ public class CnpjService {
 
     public void post(CnpjDTO cnpjDTO){
         Cnpj cnpj = new Cnpj();
-        cnpj.setNome(cnpjDTO.getNome());
-        cnpj.setTelefone(cnpjDTO.getTelefone());
+//        cnpj.setNome(cnpjDTO.getNome());
+//        cnpj.setTelefone(cnpjDTO.getTelefone());
         cnpj.setTipo(cnpjDTO.getTipo());
-        cnpj.setObs(cnpjDTO.getObs());
+//        cnpj.setObs(cnpjDTO.getObs());
         cnpj.setCnpj(cnpjDTO.getCnpj());
         cnpj.setNomeFantasia(cnpjDTO.getNomeFantasia());
         cnpj.setTipo(cnpjDTO.getTipo());

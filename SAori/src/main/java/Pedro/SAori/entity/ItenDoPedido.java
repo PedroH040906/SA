@@ -17,10 +17,11 @@ public class ItenDoPedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "produto")
-    private Produto produto;
-    @Column(name = "pedido")
-    private Pedido pedido;
+    //PROBLEMA DE RELACIONAMENTO
+//    @Column(name = "produto")
+//    private Produto produto;
+//    @Column(name = "pedido")
+//    private Pedido pedido;
     @Column(name = "valor_unitario")
     private double valorUnitario;
     @Column(name = "valor_total")
