@@ -8,7 +8,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CnpjDTO extends PessoaDTO {
-    private PessoaDTO pessoaDTO;
+    private PessoaDTO pessoa;
     private String cnpj;
     private String nomeFantasia;
     private String tipo;

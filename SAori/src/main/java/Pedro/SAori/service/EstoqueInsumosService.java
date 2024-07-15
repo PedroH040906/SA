@@ -2,9 +2,13 @@ package Pedro.SAori.service;
 
 import Pedro.SAori.entity.EstoqueInsumos;
 import Pedro.SAori.repository.EstoqueInsumosRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@AllArgsConstructor
+@Service
 public class EstoqueInsumosService {
 
     private EstoqueInsumosRepository repository;

@@ -15,7 +15,6 @@ import java.util.Date;
 @Table(name = "CPF")
 public class Cpf {
 
-
     @OneToOne
     private Pessoa pessoa;
     @Id

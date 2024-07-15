@@ -1,6 +1,7 @@
 package Pedro.SAori.controller;
 
 import Pedro.SAori.entity.Cnpj;
+import Pedro.SAori.service.CnpjDTO;
 import Pedro.SAori.service.CnpjService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,4 @@ public class CnpjController {
 
     CnpjService cnpjService;
 
-
-    @PostMapping("/post")
-    public String post(@ModelAttribute("cnpj")Cnpj cnpj) {
-
-        cnpjService.save(cnpj);
-
-        return "redirect:/cnpj/list";
-    }
 }

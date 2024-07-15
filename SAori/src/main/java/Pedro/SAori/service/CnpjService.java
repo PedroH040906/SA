@@ -2,43 +2,24 @@ package Pedro.SAori.service;
 
 import Pedro.SAori.entity.Cnpj;
 import Pedro.SAori.entity.Endereco;
+import Pedro.SAori.entity.Pessoa;
 import Pedro.SAori.repository.CnpjRepository;
+import Pedro.SAori.repository.EnderecoRepository;
+import Pedro.SAori.repository.PessoaRepository;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
 public class CnpjService {
 
-    private CnpjRepository repository;
+    CnpjRepository repository;
+    private final PessoaRepository pessoaRepository;
+    private final EnderecoRepository enderecoRepository;
 
-    public void post(CnpjDTO cnpjDTO){
-        Cnpj cnpj = new Cnpj();
-        cnpj.setTipo(cnpjDTO.getTipo());
-        cnpj.setCnpj(cnpjDTO.getCnpj());
-        cnpj.setNomeFantasia(cnpjDTO.getNomeFantasia());
-        cnpj.setTipo(cnpjDTO.getTipo());
-        cnpj.setIE(cnpjDTO.getIE());
-        cnpj.setIM(cnpjDTO.getIM());
-        cnpj.setRamoAtividade(cnpjDTO.getRamoAtividade());
 
-        PessoaDTO pessoaDTO = new PessoaDTO();
-        pessoaDTO.setNome(cnpjDTO.getNome());
-        pessoaDTO.setTelefone(cnpjDTO.getTelefone());
-        pessoaDTO.setObs(cnpjDTO.getObs());
+    public void post(Cnpj cnpjDTO, Pessoa PessoaDTO, Endereco EnderecoDTO){
 
-        Endereco endereco = new Endereco();
-        endereco.setLogradouro(cnpjDTO.getEndereco().getLogradouro());
-        endereco.setBairro(cnpjDTO.getEndereco().getBairro());
-        endereco.setNumero(cnpjDTO.getEndereco().getNumero());
-        endereco.setCidade(cnpjDTO.getEndereco().getCidade());
-        endereco.setEstado(cnpjDTO.getEndereco().getEstado());
-        endereco.setComplemento(cnpjDTO.getEndereco().getComplemento());
-        endereco.setCep(cnpjDTO.getEndereco().getCep());
-
-        repository.save(cnpj);
-    }
-    public void save(Cnpj cnpj){
-        repository.save(cnpj);
     }
 }

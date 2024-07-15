@@ -6,9 +6,8 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 @Entity
-@SuperBuilder
-@Setter
-@Getter
+@Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "CNPJ")
