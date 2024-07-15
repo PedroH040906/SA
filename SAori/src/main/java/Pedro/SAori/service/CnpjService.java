@@ -19,7 +19,7 @@ public class CnpjService {
     private final EnderecoRepository enderecoRepository;
 
 
-    public void post(Cnpj cnpjDTO, Pessoa PessoaDTO, Endereco EnderecoDTO){
+    public void post(Cnpj cnpjDTO){
 
     }
 }

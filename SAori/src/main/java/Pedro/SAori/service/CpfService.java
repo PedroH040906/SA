@@ -2,32 +2,47 @@ package Pedro.SAori.service;
 
 import Pedro.SAori.entity.Cpf;
 import Pedro.SAori.entity.Endereco;
+import Pedro.SAori.entity.Pessoa;
 import Pedro.SAori.repository.CpfRepository;
+import Pedro.SAori.repository.EnderecoRepository;
+import Pedro.SAori.repository.PessoaRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
+@AllArgsConstructor
 public class CpfService {
 
-    private CpfRepository repository;
+    private CpfRepository cpfRepository;
+    private EnderecoRepository enderecoRepository;
+    private PessoaRepository pessoaRepository;
 
     public void inserir(CpfDTO cpfDTO) {
-        Cpf cpf = new Cpf();
-        cpf.setCpf(cpfDTO.getCpf());
-        cpf.setDataNascimento(cpfDTO.getDataNascimento());
-        cpf.setGenero(cpfDTO.getGenero());
-//        cpf.setNome(cpfDTO.getNome());
-//        cpf.setTipo(cpfDTO.getTipo());
-//        cpf.setTelefone(cpfDTO.getTelefone());
-//        cpf.setObs(cpfDTO.getObs());
+        Endereco endereco = Endereco.builder()
+                .cep(cpfDTO.getEndereco().getCep())
+                .logradouro(cpfDTO.getEndereco().getLogradouro())
+                .numero(cpfDTO.getEndereco().getNumero())
+                .complemento(cpfDTO.getEndereco().getComplemento())
+                .bairro(cpfDTO.getEndereco().getBairro())
+                .cidade(cpfDTO.getEndereco().getCidade())
+                .estado(cpfDTO.getEndereco().getEstado())
+                .build();
+        enderecoRepository.save(endereco);
 
-        Endereco endereco = new Endereco();
-        endereco.setLogradouro(cpfDTO.getEndereco().getLogradouro());
-        endereco.setBairro(cpfDTO.getEndereco().getBairro());
-        endereco.setNumero(cpfDTO.getEndereco().getNumero());
-        endereco.setCep(cpfDTO.getEndereco().getCep());
-        endereco.setCidade(cpfDTO.getEndereco().getCidade());
-        endereco.setComplemento(cpfDTO.getEndereco().getComplemento());
-        endereco.setEstado(cpfDTO.getEndereco().getEstado());
+        Pessoa pessoa = Pessoa.builder()
+                .nome(cpfDTO.getNome())
+                .telefone(cpfDTO.getTelefone())
+                .endereco(endereco)
+                .tipo(cpfDTO.getTipo())
+                .obs(cpfDTO.getObs())
+                .build();
+        pessoaRepository.save(pessoa);
 
-//        cpf.setEndereco(endereco);
-        repository.save(cpf);
+        Cpf cpf = Cpf.builder()
+                .cpf(cpfDTO.getCpf())
+                .dataNascimento(cpfDTO.getDataNascimento())
+                .pessoa(pessoa)
+                .build();
+        cpfRepository.save(cpf);
     }
 }
