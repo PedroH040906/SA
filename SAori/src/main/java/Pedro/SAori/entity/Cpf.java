@@ -1,21 +1,24 @@
 package Pedro.SAori.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Date;
 
 @Entity
-@Data
+@SuperBuilder
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @Table(name = "CPF")
-public class Cpf extends Pessoa {
+public class Cpf {
 
+
+    @OneToOne
+    private Pessoa pessoa;
+    @Id
     @Column(name = "cpf")
     private String cpf;
     @Column(name = "data_nascimento")

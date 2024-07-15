@@ -49,18 +49,4 @@ public class EstoqueInsumosService {
 
         return estoqueInsumos;
     }
-    public EstoqueInsumos findbyName(String name) {
-        Optional<EstoqueInsumos> result = repository.findByName(name);
-
-        EstoqueInsumos estoqueInsumos = null;
-
-        if (result.isPresent()) {
-            estoqueInsumos = result.get();
-        }
-        else{
-            throw new RuntimeException("Insumo não encontrado");
-        }
-
-        return estoqueInsumos;
-    }
 }

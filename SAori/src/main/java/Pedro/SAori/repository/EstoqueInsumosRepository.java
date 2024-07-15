@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface EstoqueInsumosRepository extends JpaRepository<EstoqueInsumos,Long> {
 
-    Optional<EstoqueInsumos> findByName(String name);
 }

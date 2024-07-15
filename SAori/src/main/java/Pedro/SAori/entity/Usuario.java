@@ -20,9 +20,8 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    //PROBLEMA DE RELACIONAMENTO
-//    @Column(name = "pessoa")
-//    private Pessoa pessoa;
+    @OneToOne
+    private Pessoa pessoa;
     @Column(name = "data_cadastro")
     private Date dataCadastro;
     @Column(name = "papel")

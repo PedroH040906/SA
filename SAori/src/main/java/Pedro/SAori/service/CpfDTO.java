@@ -7,7 +7,6 @@ import java.util.Date;
 
 @Getter
 @Setter
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class CpfDTO extends PessoaDTO{

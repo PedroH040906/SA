@@ -3,12 +3,12 @@ package Pedro.SAori.service;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Data
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class CnpjDTO extends PessoaDTO {
+    private PessoaDTO pessoaDTO;
     private String cnpj;
     private String nomeFantasia;
     private String tipo;

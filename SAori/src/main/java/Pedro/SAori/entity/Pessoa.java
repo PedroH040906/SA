@@ -24,6 +24,6 @@ public class Pessoa {
     private String telefone;
     @Column(name = "obs")
     private String obs;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne
     private Endereco endereco;
 }
