@@ -1,6 +1,7 @@
 package Pedro.SAori.entity;
 
 import Pedro.SAori.service.Tamanho;
+import Pedro.SAori.service.meu.Tipo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,4 +25,19 @@ public class Produto {
     private String cor;
     @Column(name = "tamanho")
     private Tamanho tamanho;
+    @Column(name = "tipo")
+    private Tipo tipo;
+    @ManyToOne(targetEntity = Produto.class)
+    private Usuario usuario;
+    @Column(name = "quantidade")
+    private int quantidade;
+
+    public double calcularValorUnitario(Tipo tipo,EstoqueInsumos estoqueInsumos ) {
+        return (tipo.getCentimetros() * estoqueInsumos.getPreco()) * 1.10;
+    }
+
+    public double calcularValorTotal(ItenDoPedido it,EstoqueInsumos estoqueInsumos) {
+        return calcularValorUnitario(tipo, estoqueInsumos) * it.getProduto().getQuantidade();
+    }
+
 }

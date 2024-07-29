@@ -1,12 +1,14 @@
 package Pedro.SAori.controller;
 
-import Pedro.SAori.service.EstoqueInsumosDTO;
+import Pedro.SAori.service.luis.EstoqueInsumosDTO;
 import Pedro.SAori.entity.EstoqueInsumos;
-import Pedro.SAori.service.EstoqueInsumosService;
+import Pedro.SAori.service.luis.EstoqueInsumosService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/estoque/insumos")
@@ -33,4 +35,5 @@ public class EstoqueInsumosController {
         EstoqueInsumos insumo = estoqueInsumosService.findById(id);
         return ResponseEntity.ok(insumo);
     }
+
 }

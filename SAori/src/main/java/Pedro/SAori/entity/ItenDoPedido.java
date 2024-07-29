@@ -1,5 +1,6 @@
 package Pedro.SAori.entity;
 
+import Pedro.SAori.service.meu.Tipo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,10 @@ public class ItenDoPedido {
     private double valorUnitario;
     @Column(name = "valor_total")
     private double valorTotal;
-    @Column(name = "quantidade_pedida")
-    private int qtdPedida;
+
+    public ItenDoPedido(Produto produto, Tipo tipo,EstoqueInsumos estoqueInsumos,ItenDoPedido itenDoPedido){
+        this.produto = produto;
+        this.valorUnitario = produto.calcularValorUnitario(tipo,estoqueInsumos);
+        this.valorTotal = produto.calcularValorTotal(itenDoPedido,estoqueInsumos);
+    }
 }

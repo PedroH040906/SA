@@ -1,13 +1,14 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.geral;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class CnpjDTO extends PessoaDTO {
+
+    private Long id;
     private String cnpj;
     private String nomeFantasia;
     private String tipo;

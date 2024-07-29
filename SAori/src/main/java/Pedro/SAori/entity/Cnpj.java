@@ -1,9 +1,7 @@
 package Pedro.SAori.entity;
 
-import Pedro.SAori.service.PessoaDTO;
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Entity
 @Data
@@ -12,10 +10,12 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @Table(name = "CNPJ")
 public class Cnpj {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
     @ManyToOne
     private Pessoa pessoa;
-    @Id
     @Column(name = "cnpj")
     private String cnpj;
     @Column(name = "nome_fantasia")

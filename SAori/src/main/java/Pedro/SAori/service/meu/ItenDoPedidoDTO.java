@@ -1,7 +1,5 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.meu;
 
-import Pedro.SAori.entity.EstoqueInsumos;
-import Pedro.SAori.entity.Produto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,10 +9,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class InsumoProdutoDTO {
+public class ItenDoPedidoDTO {
 
     private Long id;
     private ProdutoDTO produto;
-    private EstoqueInsumosDTO estoqueInsumos;
-    private double quantidadeInsumo;
+    private PedidoDTO pedido;
+    private double valorUnitario;
+    private double valorTotal;
+
+
 }

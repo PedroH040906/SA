@@ -1,5 +1,7 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.meu;
 
+import Pedro.SAori.service.Tamanho;
+import Pedro.SAori.service.geral.UsuarioDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,14 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProdutoDTO {
+
+    private UsuarioDTO usuarioDTO;
     private Long id;
     private String material;
     private String cor;
     private Tamanho tamanho;
+    private Tipo tipo;
+    private int quantidade;
 
-    private ProdutoDTO(String material, Tamanho tamanho, String cor){
-        this.material = material;
-        this.tamanho = tamanho;
-        this.cor = cor;
-    }
 }

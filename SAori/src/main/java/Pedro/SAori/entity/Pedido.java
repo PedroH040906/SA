@@ -1,13 +1,13 @@
 package Pedro.SAori.entity;
 
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Builder
@@ -21,12 +21,26 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+    @OneToOne
+    private Rfid rfid;
+    @OneToOne
+    private Usuario usuario;
     @Column(name = "data_pedida")
     private Date dataPedida;
     @Column(name = "data_entrega")
     private Date dataEntrega;
-    @Column(name = "descricao")
-    private String descricao;
+    @Column(name = "valor_total")
+    private Double valorTotal;
+    @OneToMany
+    private List<ItenDoPedido> itensDoPedido;
     @Column(name = "status")
-    private Snippet.Status status;
+    private Boolean status;
+
+    public void adicionarItemPedido(ItenDoPedido item){
+        item.add(item);
+        valorTotal = 0.0;
+        for(ItenDoPedido i : itensDoPedido){
+            valorTotal += i.getValorTotal();
+        }
+    }
 }

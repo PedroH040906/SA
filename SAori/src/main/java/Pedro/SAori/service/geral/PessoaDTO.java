@@ -1,4 +1,4 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.geral;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @Data
-@SuperBuilder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class PessoaDTO {
 
-    private long id;
+    private Long id;
     private String nome;
     private String tipo;
     private String telefone;

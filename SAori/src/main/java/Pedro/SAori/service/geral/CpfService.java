@@ -1,4 +1,5 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.geral;
+
 
 import Pedro.SAori.entity.Cpf;
 import Pedro.SAori.entity.Endereco;
@@ -13,9 +14,9 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class CpfService {
 
-    private CpfRepository cpfRepository;
-    private EnderecoRepository enderecoRepository;
-    private PessoaRepository pessoaRepository;
+    private final CpfRepository cpfRepository;
+    private final EnderecoRepository enderecoRepository;
+    private final PessoaRepository pessoaRepository;
 
     public void inserir(CpfDTO cpfDTO) {
         Endereco endereco = Endereco.builder()

@@ -1,16 +1,15 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.geral;
 
-import Pedro.SAori.entity.Pessoa;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 import java.util.Date;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CpfDTO extends PessoaDTO{
+public class CpfDTO extends PessoaDTO {
 
+    private Long id;
     private String cpf;
     private Date dataNascimento;
     private Character genero;

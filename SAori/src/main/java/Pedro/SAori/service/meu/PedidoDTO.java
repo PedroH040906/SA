@@ -1,11 +1,13 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.meu;
 
+import Pedro.SAori.service.geral.UsuarioDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Builder
@@ -14,13 +16,12 @@ import java.util.Date;
 public class PedidoDTO {
 
     private Long id;
+    private UsuarioDTO usuarioDTO;
+    private RfidDTO rfidDTO;
     private Date dataPedida;
     private Date dataEntrega;
-    private String descricao;
+    private Double valorTotal;
+    private List<ItenDoPedidoDTO> itensDoPedidoDTO;
+    private boolean status;
 
-    private PedidoDTO(Date dataPedida, Date dataEntrega, String descricao) {
-        this.dataPedida = dataPedida;
-        this.dataEntrega = dataEntrega;
-        this.descricao = descricao;
-    }
 }

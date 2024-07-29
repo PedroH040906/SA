@@ -1,11 +1,11 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.luis;
 
 import Pedro.SAori.entity.EstoqueInsumos;
 import Pedro.SAori.repository.EstoqueInsumosRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
+
 
 @AllArgsConstructor
 @Service
@@ -52,5 +52,9 @@ public class EstoqueInsumosService {
         }
 
         return estoqueInsumos;
+    }
+
+    public Optional<EstoqueInsumosDTO> verificarDisponibilidadeInsumo(String nome, String cor, String tipo) {
+        return repository.findByNomeAndCorAndTipo(nome, cor, tipo);
     }
 }

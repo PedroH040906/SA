@@ -1,8 +1,12 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.meu;
 
 import Pedro.SAori.entity.Produto;
 import Pedro.SAori.repository.ProdutoRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
+@AllArgsConstructor
 public class ProdutoService {
 
     private ProdutoRepository repository;
@@ -12,6 +16,7 @@ public class ProdutoService {
         produto.setMaterial(produtoDTO.getMaterial());
         produto.setCor(produtoDTO.getCor());
         produto.setTamanho(produtoDTO.getTamanho());
+        produto.setTipo(produtoDTO.getTipo());
         repository.save(produto);
     }
     public void updateProdutoDTO(ProdutoDTO produtoDTO){
@@ -19,7 +24,7 @@ public class ProdutoService {
         produto.setMaterial(produtoDTO.getMaterial());
         produto.setCor(produtoDTO.getCor());
         produto.setTamanho(produtoDTO.getTamanho());
+        produto.setTipo(produtoDTO.getTipo());
         repository.save(produto);
     }
-
 }

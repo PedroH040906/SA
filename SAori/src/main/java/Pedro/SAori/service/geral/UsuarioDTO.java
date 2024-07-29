@@ -1,4 +1,4 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.geral;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
