@@ -37,7 +37,7 @@ public class Pedido {
     private Boolean status;
 
     public void adicionarItemPedido(ItenDoPedido item){
-        item.add(item);
+        
         valorTotal = 0.0;
         for(ItenDoPedido i : itensDoPedido){
             valorTotal += i.getValorTotal();

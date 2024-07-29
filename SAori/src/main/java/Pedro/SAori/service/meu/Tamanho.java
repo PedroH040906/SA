@@ -1,4 +1,4 @@
-package Pedro.SAori.service;
+package Pedro.SAori.service.meu;
 
 public enum Tamanho {
     PP,

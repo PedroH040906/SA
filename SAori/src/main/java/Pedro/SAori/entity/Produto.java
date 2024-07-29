@@ -1,6 +1,6 @@
 package Pedro.SAori.entity;
 
-import Pedro.SAori.service.Tamanho;
+import Pedro.SAori.service.meu.Tamanho;
 import Pedro.SAori.service.meu.Tipo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

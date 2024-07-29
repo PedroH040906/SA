@@ -1,6 +1,5 @@
 package Pedro.SAori.service.meu;
 
-import Pedro.SAori.service.Tamanho;
 import Pedro.SAori.service.geral.UsuarioDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
